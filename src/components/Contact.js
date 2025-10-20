@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Contact.css";
+import contact1 from "../assets/contact1.jpg";
+import contact2 from "../assets/contact2.jpg";
 
-const contactImages = [
-  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-];
+const contactImages = [contact1, contact2];
 
 function Contact() {
   const [index, setIndex] = useState(0);
