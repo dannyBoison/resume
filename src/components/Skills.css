@@ -1,0 +1,197 @@
+.skills {
+  position: relative;
+  padding: 100px 10%;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #0a0f1f, #000);
+  color: white;
+  transition: transform 0.3s ease-out;
+}
+
+/* Floating background wave */
+.floating-bg {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(120deg, rgba(0,238,255,0.1), transparent, rgba(255,255,255,0.05));
+  top: -25%;
+  left: -25%;
+  animation: floatBG 10s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+@keyframes floatBG {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(30px) rotate(2deg); }
+}
+
+/* Floating particles canvas */
+#particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+/* Title */
+.skills-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #0ef;
+  text-shadow: 0 0 20px rgba(0,238,255,0.3);
+  z-index: 2;
+  position: relative;
+}
+
+/* Category */
+.skill-category {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.category-header {
+  width: 100%;
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.category-header.active {
+  background: rgba(0,238,255,0.15);
+  color: #0ef;
+}
+
+.category-header .arrow {
+  float: right;
+  transition: transform 0.4s ease;
+}
+
+.category-header .arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Description */
+.category-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  margin-top: 10px;
+}
+
+.category-desc.show {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* Grid */
+.skills-grid-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.8s ease;
+}
+
+.skills-grid-wrapper.expanded {
+  max-height: 2000px;
+  margin-top: 20px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+}
+
+/* Skill Card */
+.skill-card {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at var(--x) var(--y), rgba(0,238,255,0.2), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-image-container {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.skill-name {
+  margin: 10px 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Skill Bar */
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #0ef, #6a5acd);
+  border-radius: 3px;
+  transition: width 1.5s ease;
+}
+
+.skill-progress.animate-bar {
+  width: var(--level);
+}
+
+/* View link */
+.view-work {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0ef;
+  font-size: 0.85rem;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.view-work:hover {
+  opacity: 1;
+}
