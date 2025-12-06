@@ -70,7 +70,6 @@ function Skills() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle category
   const toggleCategory = (index) => {
     setOpenCategory(openCategory === index ? null : index);
   };
@@ -100,8 +99,11 @@ function Skills() {
             <div className={`skills-grid-wrapper ${openCategory === index ? "expanded" : ""}`}>
               <div className="skills-grid">
                 {category.skills.map((skill, i) => (
-                  <div
+                  <a
                     key={i}
+                    href={skill.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="skill-card"
                     title={skill.name}
                     onMouseMove={(e) => {
@@ -118,9 +120,11 @@ function Skills() {
                     }}
                   >
                     <div className="skill-glow"></div>
+
                     <div className="skill-image-container">
                       <img src={skill.img} alt={skill.name} className="skill-image" />
                     </div>
+
                     <p className="skill-name">{skill.name}</p>
 
                     <div className="skill-bar">
@@ -129,19 +133,11 @@ function Skills() {
                         style={{ "--level": `${skill.level}%` }}
                       ></div>
                     </div>
-
-                    <a
-                      href={skill.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="view-work"
-                    >
-                      View Works →
-                    </a>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
+
           </div>
         ))}
       </div>
