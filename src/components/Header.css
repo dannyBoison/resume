@@ -9,7 +9,7 @@
   perspective: 1000px;
 }
 
-/* ----- LAYERS ----- */
+/* -------------------- PARALLAX LAYERS -------------------- */
 .parallax-layer {
   position: absolute;
   top: 0;
@@ -37,7 +37,7 @@
   z-index: 1;
 }
 
-/* Layer 3 – icons / light effects */
+/* Layer 3 – icons / effects */
 .layer3 {
   background-image: url("https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=80");
   mix-blend-mode: lighten;
@@ -45,7 +45,24 @@
   z-index: 2;
 }
 
-/* Overlay for readability */
+/* FLOAT + SPIN when CTA is clicked */
+.layer3.float-spin {
+  animation: floatIcons 1.4s ease-in-out infinite,
+             spinIcons 3s linear infinite;
+}
+
+@keyframes floatIcons {
+  0% { transform: translateY(0) scale(1.1); }
+  50% { transform: translateY(-30px) scale(1.15); }
+  100% { transform: translateY(0) scale(1.1); }
+}
+
+@keyframes spinIcons {
+  0% { transform: rotate(0deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+
+/* -------------------- OVERLAY -------------------- */
 .overlay {
   position: absolute;
   width: 100%;
@@ -54,7 +71,18 @@
   z-index: 3;
 }
 
-/* Content */
+/* Warp flash effect */
+.warp-flash {
+  animation: warpFlash 0.6s ease-out;
+}
+
+@keyframes warpFlash {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(3); }
+  100% { filter: brightness(1); }
+}
+
+/* -------------------- TEXT CONTENT -------------------- */
 .header-content {
   text-align: center;
   z-index: 4;
@@ -70,13 +98,37 @@
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.4);
 }
 
+/* Button hover */
 .cta-btn:hover {
   background: #6a5acd;
   transform: scale(1.05);
 }
 
+/* Button vibration on click */
+.vibrate {
+  animation: vibrateBtn 0.25s linear infinite;
+}
+
+@keyframes vibrateBtn {
+  0% { transform: translate(1px, 1px); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(1px, 1px); }
+}
+
+/* Button neon glow on click */
+.glow {
+  box-shadow:
+    0 0 10px #0ef,
+    0 0 20px #0ef,
+    0 0 30px #0ef;
+}
+
+/* Fade-in animation for the header text */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -86,4 +138,75 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+
+/* --- DROPDOWN CONTAINER --- */
+.cta-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* --- BEAUTIFUL GLASS DROPDOWN --- */
+.dropdown {
+  position: absolute;
+  top: 58px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 14px 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25),
+              0 0 15px rgba(0, 255, 255, 0.25);
+  color: #fff;
+  min-width: 220px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: top;
+  animation: dropdownFade 0.4s forwards ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* dropdown animation */
+@keyframes dropdownFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    pointer-events: auto;
+  }
+}
+
+/* --- LINKS --- */
+.dropdown a {
+  color: #00eaff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.dropdown a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* each row */
+.dropdown p {
+  margin: 10px 0;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: 0.25s ease;
+  padding: 6px 0;
+  border-radius: 8px;
+}
+
+.dropdown p:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
