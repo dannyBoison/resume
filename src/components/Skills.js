@@ -7,10 +7,10 @@ const skillCategories = [
     description:
       "Building responsive and modern web interfaces using clean code and creative layouts.",
     skills: [
-      { name: "HTML5", img: "https://cdn-icons-png.flaticon.com/512/174/174854.png", level: 95, link: "#" },
-      { name: "CSS3", img: "https://cdn-icons-png.flaticon.com/512/732/732190.png", level: 90, link: "#" },
-      { name: "JavaScript", img: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png", level: 88, link: "#" },
-      { name: "React.js", img: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png", level: 85, link: "#" },
+      { name: "HTML5", img: "https://cdn-icons-png.flaticon.com/512/174/174854.png", level: 100, link: "https://go2ucc.com/?i=1" },
+      { name: "CSS3", img: "https://cdn-icons-png.flaticon.com/512/732/732190.png", level: 90, link: "https://go2ucc.com/studyhub.php" },
+      { name: "JavaScript", img: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png", level: 88, link: "https://ironfecheck.com/?i=1" },
+      { name: "React.js", img: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png", level: 75, link: "go2stock.netlify.app.com" },
     ],
   },
   {
@@ -18,13 +18,13 @@ const skillCategories = [
     description:
       "Crafting stunning visuals, motion, and digital art that bring ideas to life.",
     skills: [
-      { name: "Graphic Design", img: "https://static.thenounproject.com/png/graphic-design-icon-562015-512.png", level: 95, link: "#" },
-      { name: "Adobe Photoshop", img: "https://cdn-icons-png.flaticon.com/512/5968/5968520.png", level: 92, link: "#" },
-      { name: "CorelDRAW", img: "https://cdn-icons-png.flaticon.com/512/5968/5968846.png", level: 88, link: "#" },
-      { name: "Video Editing", img: "https://cdn-icons-png.flaticon.com/512/873/873107.png", level: 90, link: "#" },
-      { name: "3D Animation", img: require("../assets/whiteboard.jpeg"), level: 82, link: "#" },
-      { name: "2D Animation", img: "https://static.thenounproject.com/png/2d-animation-icon-1640042-512.png", level: 85, link: "#" },
-      { name: "Whiteboard Animation", img: "https://img.icons8.com/ios-filled/100/000000/whiteboard.png", level: 88, link: "#" },
+      { name: "Graphic Design", img: "https://static.thenounproject.com/png/graphic-design-icon-562015-512.png", level: 95, link: "https://www.instagram.com/dan_boison/" },
+      { name: "Adobe Photoshop", img: "https://cdn-icons-png.flaticon.com/512/5968/5968520.png", level: 92, link: "https://www.instagram.com/dan_boison/" },
+      { name: "CorelDRAW", img: "https://cdn-icons-png.flaticon.com/512/5968/5968846.png", level: 88, link: "https://www.instagram.com/dan_boison/" },
+      { name: "Video Editing", img: "https://cdn-icons-png.flaticon.com/512/873/873107.png", level: 90, link: "https://www.linkedin.com/posts/daniel-boison_ghanaunionassurance-insurancematters-videoproduction-activity-7245132885244932097-qlzf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC4GO0gBmgq24w9mD7NLAxHzf6uRC6vwKK0" },
+      { name: "3D Animation", img: require("../assets/whiteboard.jpeg"), level: 82, link: "https://www.linkedin.com/posts/daniel-boison_motorinsurance-3danimation-videoproduction-activity-7245386750410334209-Sz7K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC4GO0gBmgq24w9mD7NLAxHzf6uRC6vwKK0" },
+      { name: "2D Animation", img: "https://static.thenounproject.com/png/2d-animation-icon-1640042-512.png", level: 85, link: "https://www.instagram.com/reel/DHlAraiB_Do/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+      { name: "Whiteboard Animation", img: "https://img.icons8.com/ios-filled/100/000000/whiteboard.png", level: 88, link: "https://www.instagram.com/reel/DHk__yyBvGx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
     ],
   },
 ];
