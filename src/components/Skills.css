@@ -195,3 +195,9 @@
 .view-work:hover {
   opacity: 1;
 }
+
+.skill-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
